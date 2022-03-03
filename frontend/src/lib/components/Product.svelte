@@ -22,7 +22,7 @@
 
 <style>
 	.product {
-		display: flex;s
+		display: flex;
 		background-color: white;
 		gap: 0.5rem;
 		border-radius: 1rem;
