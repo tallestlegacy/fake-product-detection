@@ -33,7 +33,8 @@
 		gap: 3rem;
 	}
 	.products {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 1rem;
