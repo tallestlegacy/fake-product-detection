@@ -1,8 +1,6 @@
 import { options, apiUrl } from './store';
 
 export const searchKeyword = async (params) => {
-	console.log('Searching');
-	console.log(params);
 	try {
 		const res = await fetch(
 			`${apiUrl}/product?categoryID=${params.categoryID}&keyword=${params.keyword}&page=1`,
@@ -16,5 +14,15 @@ export const searchKeyword = async (params) => {
 		return json.docs;
 	} catch (err) {
 		return [];
+	}
+};
+
+export const getReviews = async (id) => {
+	try {
+		const res = await fetch(`${apiUrl}`);
+	} catch (error) {
+		return {
+			error
+		};
 	}
 };
