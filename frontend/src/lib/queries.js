@@ -17,7 +17,7 @@ export const searchKeyword = async (params) => {
 	}
 };
 
-export const getReviews = async (id, fetch) => {
+export const getReviews = async (id) => {
 	try {
 		const res = await fetch(`${apiUrl}/review/${id}`, {
 			method: 'GET',
@@ -34,7 +34,7 @@ export const getReviews = async (id, fetch) => {
 	}
 };
 
-export const getProductData = async (id, fetch) => {
+export const getProductData = async (id) => {
 	try {
 		const res = await fetch(`${apiUrl}/product/${id}`, {
 			method: 'GET',

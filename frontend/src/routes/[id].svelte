@@ -1,10 +1,10 @@
 <script context="module">
 	import { getReviews, getProductData } from '$lib/queries';
-	export const load = async ({ params, fetch }) => {
+	export const load = async ({ params }) => {
 		const { id } = params;
 
-		const reviews = await getReviews(id, fetch);
-		const product = await getProductData(id, fetch);
+		const reviews = await getReviews(id);
+		const product = await getProductData(id);
 
 		return {
 			props: {
