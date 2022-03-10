@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/bin/node /usr/local/pnpm-global/5/node_modules/yarn/bin/yarn.js add axios
+
+PATH: 
+  /usr/local/android-studio-2021.1.1.22-linux/android-studio/bin:/home/n00b/.cargo/bin:/home/n00b/.local/bin:/home/n00b/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/n00b/Android/Sdk/emulator:/home/n00b/Android/Sdk/tools:/home/n00b/Android/Sdk/tools/bin:/home/n00b/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/n00b/.cache/yarn/v6/npm-minimatch-3.0.4-5166e286457f03306064be5497e8dbb0c3d32083-integrity/node_modules/minimatch/LICENSE' -> '/home/n00b/Projects/fake-product-detection/frontend/node_modules/@playwright/test/node_modules/minimatch/LICENSE'
+
+npm manifest: 
+  {
+    "name": "frontend",
+    "version": "0.0.1",
+    "scripts": {
+      "dev": "svelte-kit dev",
+      "build": "svelte-kit build",
+      "package": "svelte-kit package",
+      "preview": "svelte-kit preview",
+      "test": "playwright test",
+      "check": "svelte-check --tsconfig ./tsconfig.json",
+      "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+      "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+      "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+    },
+    "devDependencies": {
+      "@sveltejs/adapter-vercel": "next",
+      "@playwright/test": "^1.19.1",
+      "@sveltejs/kit": "next",
+      "@typescript-eslint/eslint-plugin": "^5.10.1",
+      "@typescript-eslint/parser": "^5.10.1",
+      "eslint": "^7.32.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-svelte3": "^3.2.1",
+      "prettier": "^2.5.1",
+      "prettier-plugin-svelte": "^2.5.0",
+      "svelte": "^3.44.0",
+      "svelte-check": "^2.2.6",
+      "svelte-preprocess": "^4.10.1",
+      "tslib": "^2.3.1",
+      "typescript": "~4.5.4"
+    },
+    "type": "module",
+    "dependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

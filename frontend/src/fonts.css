@@ -4,6 +4,11 @@
 }
 
 @font-face {
+	font-family: SerifFontBold;
+	src: url(/static/fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf);
+}
+
+@font-face {
 	font-family: SansSerifFont;
 	src: url(/static/fonts/Poppins/Poppins-Regular.ttf);
 }
