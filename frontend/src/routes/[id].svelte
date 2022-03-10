@@ -1,5 +1,4 @@
 <script context="module">
-    import {}
 	export const load = async ({ params, fetch }) => {
 		const { id } = params;
 
