@@ -3,15 +3,24 @@
 	export const load = async ({ params }) => {
 		const { id } = params;
 
-		const reviews = await getReviews(id);
-		const product = await getProductData(id);
+		try {
+			const reviews = await getReviews(id);
+			const product = await getProductData(id);
 
-		return {
-			props: {
-				reviews,
-				product
-			}
-		};
+			return {
+				props: {
+					reviews,
+					product
+				}
+			};
+		} catch (err) {
+			return {
+				props: {
+					reviews: { docs: [] },
+					product: {}
+				}
+			};
+		}
 	};
 </script>
 
