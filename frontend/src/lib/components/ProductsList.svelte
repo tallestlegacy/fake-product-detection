@@ -1,18 +1,18 @@
 <script>
 	import { SyncLoader } from 'svelte-loading-spinners';
 
-	import { categoryID } from '$lib/store';
+	import { categoryID, productList } from '$lib/store';
 	import { searchKeyword } from '$lib/queries';
 
-	import Product from '$lib/components/Product.svelte';
+	import ProductCard from '$lib/components/ProductCard.svelte';
 
-	let productList = [];
 	let keyword = '';
 	let loading = false;
 
 	const handleSearch = async () => {
 		loading = true;
-		productList = await searchKeyword({ categoryID: $categoryID, keyword });
+		let data = await searchKeyword({ categoryID: $categoryID, keyword });
+		productList.set(data);
 		loading = false;
 	};
 </script>
@@ -23,15 +23,16 @@
 			<input type="search" name="search-text" bind:value={keyword} placeholder="input keyword" />
 		</form>
 	</header>
+	<pre />
 	<div class="products">
 		{#if loading}
 			<SyncLoader color="#0a2749" size="60" />
-		{:else if productList.length == 0}
-			<h2>Enter single word as keyword</h2>
-		{:else}
-			{#each productList as data}
-				<Product {data} />
+		{:else if $productList.length > 0}
+			{#each $productList as data}
+				<ProductCard {data} />
 			{/each}
+		{:else}
+			<h2>Enter single word as keyword</h2>
 		{/if}
 	</div>
 </div>

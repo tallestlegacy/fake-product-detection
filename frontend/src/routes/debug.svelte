@@ -1,18 +1,10 @@
 <script>
-	import products from '$lib/dummyProducts.json';
-	import Product from '$lib/components/Product.svelte';
+	import data from '$lib/productData.json';
+	import ProductData from '$lib/components/ProductData.svelte';
 </script>
 
-<div class="products">
-	{#each products as data}
-		<Product {data} />
-	{/each}
-</div>
+<ProductData {data} />
 
-<style>
-	.products {
-		display: grid;
-		gap: 1rem;
-		padding: 1rem;
-	}
-</style>
+<pre>
+{JSON.stringify(data, null, 2)}
+</pre>

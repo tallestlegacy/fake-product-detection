@@ -11,3 +11,5 @@ export const options = {
 };
 
 export const apiUrl = 'https://amazon24.p.rapidapi.com/api';
+
+export const productList = writable([]);

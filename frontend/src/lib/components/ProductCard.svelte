@@ -12,7 +12,7 @@
 		</div>
 		<div class="details">
 			<span class="title">
-				{title}
+				{title.substring(0, 45)} ...
 			</span>
 			<span class="id">
 				{data.product_id}
@@ -21,7 +21,7 @@
 				<a href={data.product_detail_url}>details</a>
 			</span>
 			<span class="price">
-				Original Price : {currency}
+				Price : {currency}
 				{data.app_sale_price}
 			</span>
 		</div>
@@ -36,7 +36,8 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 
-		max-height: 200px;
+		height: 150px;
+		overflow: hidden;
 		aspect-ratio: 2;
 
 		font-size: 12px;

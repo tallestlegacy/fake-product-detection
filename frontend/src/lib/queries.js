@@ -17,12 +17,32 @@ export const searchKeyword = async (params) => {
 	}
 };
 
-export const getReviews = async (id) => {
+export const getReviews = async (id, fetch) => {
 	try {
-		const res = await fetch(`${apiUrl}`);
-	} catch (error) {
+		const res = await fetch(`${apiUrl}/review/${id}`, {
+			method: 'GET',
+			headers: options.headers
+		});
+
+		const json = await res.json();
 		return {
-			error
+			docs: json.docs,
+			overview: json.overview
 		};
+	} catch (error) {
+		return [];
+	}
+};
+
+export const getProductData = async (id, fetch) => {
+	try {
+		const res = await fetch(`${apiUrl}/product/${id}`, {
+			method: 'GET',
+			headers: options.headers
+		});
+		const json = await res.json();
+		return json;
+	} catch (error) {
+		return {};
 	}
 };
