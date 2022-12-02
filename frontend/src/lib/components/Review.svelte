@@ -1,4 +1,6 @@
 <script>
+	import { fetchSentiment } from "$lib/queries";
+import { onMount } from "svelte";
 	export let data;
 </script>
 
@@ -15,6 +17,17 @@
 	<span class="name">
 		{data.customerName}
 	</span>
+
+	{#await fetchSentiment(data.text)}
+		
+	<span class="text">
+		Fetching Sentiment
+	</span>
+	{:then res} 
+<pre>
+	{JSON.stringify(res)}
+</pre>
+	{/await}
 </div>
 
 <style>
